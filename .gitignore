@@ -58,3 +58,10 @@ docs/_themes
 
 # PyBuilder
 target/
+
+# Buildout
+src/
+bin/
+
+.idea
+
