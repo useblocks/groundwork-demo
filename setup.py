@@ -18,12 +18,12 @@ setup(
     license='MIT license',
     author='team useblocks',
     author_email='info@useblocks.com',
-    description="Package for hosting groundwork apps and plugins like groundwork_demo_app or groundwork_demo_plugin.",
+    description="Package for hosting groundwork apps and plugins like groundwork_demo_app or GwDemoPlugin.",
     long_description=__doc__,
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     include_package_data=True,
     platforms='any',
-    setup_requires=['pytest-runner', 'sphinx', 'gitpython'],
+    setup_requires=['groundwork', 'groundwork-web', 'pytest-runner', 'sphinx', 'gitpython'],
     tests_require=['pytest', 'pytest-flake8'],
     install_requires=[],
     classifiers=[
@@ -40,8 +40,8 @@ setup(
     entry_points={
         'console_scripts': ["groundwork_demo = "
                             "groundwork_demo.applications.groundwork_demo_app:start_app"],
-        'groundwork.plugin': ["groundwork_demo_plugin = "
-                              "groundwork_demo.plugins.groundwork_demo_plugin:"
-                              "groundwork_demo_plugin"],
+        'groundwork.plugin': ["GwDemoIntroduction = "
+                              "groundwork_demo.plugins.gw_demo_introduction.gwdemointroduction:"
+                              "GwDemoIntroduction"],
     }
 )
