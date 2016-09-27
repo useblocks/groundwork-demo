@@ -13,11 +13,11 @@ div.benefits-modal {
 }
 
 p {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 p.small {
-	font-size: 16px;
+	font-size: 15px;
 }
 
 a,
@@ -32,7 +32,7 @@ footer a,
 footer a:hover,
 footer a:focus,
 footer a.active {
-	color: @theme-dark;
+	color: @theme-primary;
 	outline: none;
 }
 
@@ -46,10 +46,11 @@ hr.star-light,
 hr.star-primary {
     padding: 0;
     border: none;
-    border-top: solid 5px;
+    border-top: solid 3px;
     text-align: center;
     max-width: 250px;
-    margin: 25px auto 30px;
+    //margin: 25px auto 30px;
+    margin: 15px auto 30px;
 }
 
 hr.star-light:after,
@@ -59,7 +60,8 @@ hr.star-primary:after {
     display: inline-block;
     position: relative;
     top: -0.8em;
-    font-size: 2em;
+    //font-size: 2em;
+    font-size: 1.7em;
     padding: 0 0.25em;
 }
 
@@ -118,15 +120,15 @@ header {
 @media(min-width:768px) {
 	header {
 		.container {
-			padding-top: 200px;
-			padding-bottom: 100px;
+			//padding-top: 200px;
+			//padding-bottom: 100px;
 		}
 		.intro-text {
 			.name {
-				font-size: 2.75em;
+				font-size: 2.2em;
 			}
 			.skills {
-				font-size: 1.75em;
+				font-size: 1.5em;
 			}
 		}
 	}
@@ -198,7 +200,8 @@ header {
 
 @media(min-width:768px) {
     .navbar-custom {
-        padding: 25px 0;
+        //padding: 25px 0;
+        padding: 10px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
@@ -210,7 +213,8 @@ header {
 	    }
     }
     .navbar-custom.affix {
-        padding: 10px 0;
+        //padding: 10px 0;
+        padding: 0;
 		.navbar-brand {
 	        font-size: 1.5em;
 	    }
@@ -218,7 +222,8 @@ header {
 }
 
 section {
-    padding: 100px 0;
+    //padding: 100px 0;
+    padding: 50px 0;
     h2 {
     	margin: 0;
     	font-size: 3em;
@@ -239,7 +244,7 @@ section.success {
 	}
 }
 
-#benefits {
+#benefits, #batteries, #community {
     .benefits-item {
         margin: 0 0 15px;
         right: 0;
@@ -351,13 +356,14 @@ form .row:first-child .floating-label-form-group {
 }
 
 footer {
-	color: @theme_primary_text_color;
+	//color: @theme_primary_text_color;
+	color: @theme-text_color;
 	h3 {
 		margin-bottom: 30px;
 	}
 	.footer-above {
 		padding-top: 50px;
-		background-color: @theme-primary;
+		background-color: @theme-dark;
 	}
 	.footer-col {
 		margin-bottom: 50px;
@@ -365,6 +371,7 @@ footer {
 	.footer-below {
 		padding: 25px 0;
 		background-color: darken(@theme-primary, 5%);
+		color: @theme-dark;
 	}
 }
 
@@ -499,4 +506,12 @@ footer {
   max-height: 100%;
   width: auto;
   float:left;
+}
+
+.img-responsive {
+	padding: 0 5% 0 5%;
+}
+
+.extra-space {
+	margin-top: 50px;
 }
