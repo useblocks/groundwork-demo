@@ -2,7 +2,7 @@ import os
 from groundwork_web.patterns import GwWebPattern
 
 
-class GwDemoIntroduction( GwWebPattern):
+class GwDemoIntroduction(GwWebPattern):
     def __init__(self, *args, **kwargs):
         self.name = self.__class__.__name__
         super().__init__(*args, **kwargs)
@@ -11,12 +11,12 @@ class GwDemoIntroduction( GwWebPattern):
         self.web.contexts.register("demo",
                                    template_folder=os.path.join(os.path.dirname(__file__), "templates/"),
                                    static_folder=os.path.join(os.path.dirname(__file__), "static/"),
-                                   url_prefix=None,
+                                   url_prefix="/demo",
                                    description="Context fpr demo pages")
 
         self.web.routes.register("/", ["GET"], self.__introduction_view, context="demo")
 
     def __introduction_view(self):
-        return self.web.providers.render("introduction.html")
+        return self.web.render("introduction.html")
 
 
