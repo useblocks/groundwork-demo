@@ -1,10 +1,24 @@
 import os
 from groundwork import App
+from flask import redirect, url_for
+
+
+def create_app():
+    app = App([os.path.abspath(os.path.join(os.path.dirname(__file__), "configuration.py"))])
+    app.plugins.activate(app.config.get("PLUGINS", None))
+    app.plugins.activate(["GwWeb", "GwWebFlask", "GwPluginsInfo", "GwDemoIntroduction", ])
+
+    def open_page():
+        with app.web.flask.app_context():
+            return redirect(url_for("gw.__introduction_view"))
+
+    app.web.routes.register("/", ["GET"], open_page, plugin=None, context="web", name="start_redirect")
+
+    return app
 
 
 def start_app():
-    app = App([os.path.join(os.path.dirname(__file__), "configuration.py")])
-    app.plugins.activate(["GwWeb", "GwWebFlask", "GwPluginsInfo", "GwDemoIntroduction", ])
+    app = create_app()
     app.commands.start_cli()
 
 
