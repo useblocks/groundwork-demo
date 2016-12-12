@@ -2,7 +2,7 @@ import os
 from groundwork_web.patterns import GwWebPattern
 
 
-class GwDemoIntroduction( GwWebPattern):
+class GwDemoIntroduction(GwWebPattern):
     def __init__(self, *args, **kwargs):
         self.name = self.__class__.__name__
         super().__init__(*args, **kwargs)
